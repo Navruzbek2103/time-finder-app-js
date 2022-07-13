@@ -16,7 +16,7 @@ var year = 365;
 var day = 24;
 var hour = 60;
 var minut = 60;
-var secund = 3600;
+var secund = 60;
 var result1 = 0;
 var result2 = 0;
 var result3 = 0;
@@ -29,21 +29,27 @@ elForm.addEventListener("submit", function(qiymat){
 
   if(!isNaN(km)){
     result1 = km / person;
-    var result11 = (km / person - Math.trunc(result1)) * 60;
-    elParagraph1.textContent = Math.trunc(result1) + " hour " + Math.trunc(result11) + " minute";
+    var result11 = (km / person) / 24;
+    var result12 = (km / person - Math.trunc(result1)) * minut;
+    var result13 = (result13 - Math.trunc(result13)) * secund;
+
+    elParagraph1.textContent = Math.trunc(result11) + " day " + Math.trunc(result1) + " hour " + Math.trunc(result12) + " minute " + Math.ceil(result12) + " secund";
 
 
     result2 = km / velo;
-    var result21 = (km / velo - Math.trunc(result2)) * 60;
-    elParagraph2.textContent = Math.trunc(result2) + " hour " +  Math.trunc(result21) + " minute";
+    var result21 = (km / velo - Math.trunc(result2)) * minut;
+    var result22 = (result21 - Math.trunc(result21)) * secund;
+    elParagraph2.textContent = Math.trunc(result2) + " hour " +  Math.trunc(result21) + " minute " + Math.ceil(result22) + " secund";
 
     result3 = km / car;
-    var result31 = (km / car - Math.trunc(result3)) * 60;
-    elParagraph3.textContent = Math.trunc(result3) + " hour " + Math.trunc(result31) + " minute";
+    var result31 = (km / car - Math.trunc(result3)) * minut;
+    var result32 = (result31 - Math.trunc(result31)) * secund;
+    elParagraph3.textContent = Math.trunc(result3) + " hour " + Math.trunc(result31) + " minute " + Math.ceil(result32) + " secund";
 
     result4 = km / airplane;
-    var result41 = (km / airplane - Math.trunc(result4)) * 60;
-    elParagraph4.textContent = Math.trunc(result4) + " hour " + Math.trunc(result41) + " minute";
+    var result41 = (km / airplane - Math.trunc(result4)) * minut;
+    var result42 = (result41 - Math.trunc(result41)) * secund;
+    elParagraph4.textContent = Math.trunc(result4) + " hour " + Math.trunc(result41) + " minute " + Math.ceil(result42) + " secund";
 
 
 
@@ -61,7 +67,10 @@ elForm.addEventListener("submit", function(qiymat){
   else if(isNaN(km)){
     alert("Warning! \n \n Iltimos, raqamli ma'lumot kiriting")
     result1 = elKilometresInput.value.trim() * person;
-    elParagraph.textContent = "Ma'lumot kiritishda xatolik bor";
+    elParagraph1.textContent = "Ma'lumot kiritishda xatolik bor";
+    elParagraph2.textContent = "Ma'lumot kiritishda xatolik bor";
+    elParagraph3.textContent = "Ma'lumot kiritishda xatolik bor";
+    elParagraph4.textContent = "Ma'lumot kiritishda xatolik bor";
   }
 
   else{
