@@ -66,3 +66,18 @@ h1, h2, h3, p{
   align-items: center;
   margin: 20px auto;
 }
+
+@media only screen and (max-width: 530px){
+  #distance{
+    width: 370px;
+  }
+  .button{
+    padding: 10px 45px;
+  }
+}
+
+@media only screen and (max-width: 400px){
+  #distance{
+    width: 300px;
+  }
+}
