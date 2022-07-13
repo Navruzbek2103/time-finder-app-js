@@ -25,18 +25,25 @@ var result4 = 0;
 elForm.addEventListener("submit", function(qiymat){
   qiymat.preventDefault();
 
-  if(!isNaN(elKilometresInput.value)){
-    result1 = elKilometresInput.value.trim() / person;
-    elParagraph1.textContent = Math.trunc(result1) + " hour";
+  var km = elKilometresInput.value.trim();
 
-    result2 = elKilometresInput.value.trim() / velo;
-    elParagraph2.textContent = Math.trunc(result2) + " hour";
+  if(!isNaN(km)){
+    result1 = km / person;
+    var result11 = (km / person - Math.trunc(result1)) * 60;
+    elParagraph1.textContent = Math.trunc(result1) + " hour " + Math.trunc(result11) + " minute";
 
-    result3 = elKilometresInput.value.trim() / car;
-    elParagraph3.textContent = Math.trunc(result3) + " hour";
 
-    result4 = elKilometresInput.value.trim() / airplane;
-    elParagraph4.textContent = Math.trunc(result4) + " hour";
+    result2 = km / velo;
+    var result21 = (km / velo - Math.trunc(result2)) * 60;
+    elParagraph2.textContent = Math.trunc(result2) + " hour " +  Math.trunc(result21) + " minute";
+
+    result3 = km / car;
+    var result31 = (km / car - Math.trunc(result3)) * 60;
+    elParagraph3.textContent = Math.trunc(result3) + " hour " + Math.trunc(result31) + " minute";
+
+    result4 = km / airplane;
+    var result41 = (km / airplane - Math.trunc(result4)) * 60;
+    elParagraph4.textContent = Math.trunc(result4) + " hour " + Math.trunc(result41) + " minute";
 
 
 
@@ -51,7 +58,7 @@ elForm.addEventListener("submit", function(qiymat){
 
   }
 
-  else if(isNaN(elKilometresInput.value)){
+  else if(isNaN(km)){
     alert("Warning! \n \n Iltimos, raqamli ma'lumot kiriting")
     result1 = elKilometresInput.value.trim() * person;
     elParagraph.textContent = "Ma'lumot kiritishda xatolik bor";
