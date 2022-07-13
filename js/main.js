@@ -28,28 +28,32 @@ elForm.addEventListener("submit", function(qiymat){
   var km = elKilometresInput.value.trim();
 
   if(!isNaN(km)){
-    result1 = km / person;
     var result11 = (km / person) / 24;
+    result1 = km / person;
     var result12 = (km / person - Math.trunc(result1)) * minut;
-    var result13 = (result13 - Math.trunc(result13)) * secund;
 
-    elParagraph1.textContent = Math.trunc(result11) + " day " + Math.trunc(result1) + " hour " + Math.trunc(result12) + " minute " + Math.ceil(result12) + " secund";
+    var result13 = (result12 - Math.trunc(result12)) * secund;
+
+    elParagraph1.textContent = Math.trunc(result11) + " day " + Math.trunc(result1) + " hour " + Math.trunc(result12) + " minute " + Math.ceil(result13) + " secund";
 
 
+    var result21 = (km / velo) / 24;
     result2 = km / velo;
-    var result21 = (km / velo - Math.trunc(result2)) * minut;
-    var result22 = (result21 - Math.trunc(result21)) * secund;
-    elParagraph2.textContent = Math.trunc(result2) + " hour " +  Math.trunc(result21) + " minute " + Math.ceil(result22) + " secund";
+    var result22 = (km / velo - Math.trunc(result2)) * minut;
+    var result23 = (result22 - Math.trunc(result22)) * secund;
+    elParagraph2.textContent = Math.trunc(result21) + " day " + Math.trunc(result2) + " hour " +  Math.trunc(result22) + " minute " + Math.ceil(result23) + " secund";
 
+    var result31 = (km / car) / 24;
     result3 = km / car;
-    var result31 = (km / car - Math.trunc(result3)) * minut;
-    var result32 = (result31 - Math.trunc(result31)) * secund;
-    elParagraph3.textContent = Math.trunc(result3) + " hour " + Math.trunc(result31) + " minute " + Math.ceil(result32) + " secund";
+    var result32 = (km / car - Math.trunc(result3)) * minut;
+    var result33 = (result32 - Math.trunc(result32)) * secund;
+    elParagraph3.textContent = Math.trunc(result31) + " day " + Math.trunc(result3) + " hour " + Math.trunc(result32) + " minute " + Math.ceil(result33) + " secund";
 
+    var result41 = (km / airplane) / 24;
     result4 = km / airplane;
-    var result41 = (km / airplane - Math.trunc(result4)) * minut;
-    var result42 = (result41 - Math.trunc(result41)) * secund;
-    elParagraph4.textContent = Math.trunc(result4) + " hour " + Math.trunc(result41) + " minute " + Math.ceil(result42) + " secund";
+    var result42 = (km / airplane - Math.trunc(result4)) * minut;
+    var result43 = (result42 - Math.trunc(result42)) * secund;
+    elParagraph4.textContent = Math.trunc(result41) + " day " + Math.trunc(result4) + " hour " + Math.trunc(result42) + " minute " + Math.ceil(result43) + " secund";
 
 
 
